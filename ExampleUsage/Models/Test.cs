@@ -14,7 +14,11 @@ namespace ExampleUsage.Models
             Id = (int)testEnum;
             Description = testEnum.ToString();
         }
-        protected Test() { }
+
+        protected Test()
+        {
+        }
+
         public string Description { get; set; }
     }
 }

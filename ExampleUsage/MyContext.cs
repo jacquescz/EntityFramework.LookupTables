@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EntityFramework.LookupTables;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using EntityFramework.LookupTables;
-using ExampleUsage.Models;
 using System.Reflection;
 
 namespace ExampleUsage
@@ -17,9 +10,13 @@ namespace ExampleUsage
         {
             Database.SetInitializer<MyContext>(new DropCreateDatabaseAlways<MyContext>());
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //Add conventions.
             modelBuilder.Conventions.Add<LookupTableConvention>();
+            //Registers to the modelBuilder all entities that inherits from EntityTypeConfiguration<>
+            //this in not mandatory for the lookuptables to work.
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(GetType()));
             base.OnModelCreating(modelBuilder);
         }

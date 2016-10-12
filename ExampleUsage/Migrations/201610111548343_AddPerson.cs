@@ -1,8 +1,7 @@
 namespace ExampleUsage.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class AddPerson : DbMigration
     {
         public override void Up()
@@ -10,26 +9,25 @@ namespace ExampleUsage.Migrations
             CreateTable(
                 "dbo.People",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        TestId = c.Int(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    TestId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Tests", t => t.TestId)
                 .Index(t => t.TestId);
-            
+
             CreateTable(
                 "dbo.Tests",
                 c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        Description = c.String(nullable: false, maxLength: 50),
-                    })
+                {
+                    Id = c.Int(nullable: false),
+                    Description = c.String(nullable: false, maxLength: 50),
+                })
                 .PrimaryKey(t => t.Id);
-            
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.People", "TestId", "dbo.Tests");

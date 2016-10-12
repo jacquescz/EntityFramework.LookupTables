@@ -10,7 +10,6 @@ namespace Entityframework.LookupTablesTest
 {
     public class DbContextExtensionsTest
     {
-   
         [Fact]
         [Trait("Category", "Integration")]
         public void CallGenericSeedEnumsValuesWithGivenTypes()

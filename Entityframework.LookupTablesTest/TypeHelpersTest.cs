@@ -1,5 +1,4 @@
 ﻿using EntityFramework.LookupTables;
-using ExampleUsage.LookupTables;
 using ExampleUsage.Models;
 using Xunit;
 
@@ -17,6 +16,7 @@ namespace Entityframework.LookupTablesTest
             //assert
             Assert.NotEmpty(result);
         }
+
         [Fact]
         [Trait("Category", "CI")]
         public void CallDoesTypeSupportInterface()

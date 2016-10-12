@@ -21,6 +21,7 @@ namespace Entityframework.LookupTablesTest
             //assert
             Assert.Equal(TestEnum.value1, result.First());
         }
+
         [Fact]
         [Trait("Category", "CI")]
         public void GivenValidTypeGetAssemblyEnumsFor()
@@ -33,6 +34,7 @@ namespace Entityframework.LookupTablesTest
             //assert
             Assert.Equal(testType, result);
         }
+
         [Fact]
         [Trait("Category", "CI")]
         public void GivenTypeCheckTypeForValidEnum()
