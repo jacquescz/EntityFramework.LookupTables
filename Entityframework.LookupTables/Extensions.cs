@@ -59,15 +59,26 @@ namespace EntityFramework.LookupTables
             var entities = context.Set<TEntity>();
             entities.SeedEnumValues<TEntity, TEnum>();
             context.SaveChanges();
+            context.DeleteIgnorePrimaryKey<TEntity, TEnum>();
+        }
+
+        internal static void DeleteIgnorePrimaryKey<TEntity, TEnum>(this DbContext context) where TEntity : class
+        {
+            var entities = context.Set<TEntity>();
             var toDelete = entities.ToList().Skip(typeof(TEnum).GetEnumValuesFor().ToList().Count).ToList();
             while (toDelete.Count > 0)
             {
                 var current = toDelete.Last();
-                var objectContext = ((IObjectContextAdapter)context).ObjectContext;
-                objectContext.DeleteObject(current);
-                objectContext.SaveChanges();
+                context.DeleteIgnorePrimaryKey(current);
                 toDelete.Remove(current);
             }
+        }
+
+        internal static void DeleteIgnorePrimaryKey<TEntity>(this DbContext context, TEntity entity) where TEntity : class
+        {
+            var objectContext = ((IObjectContextAdapter)context).ObjectContext;
+            objectContext.DeleteObject(entity);
+            objectContext.SaveChanges();
         }
     }
 
@@ -82,7 +93,6 @@ namespace EntityFramework.LookupTables
             var enumList = typeof(TEnum).GetEnumValuesFor()
                                     .Select(value => converter((TEnum)value))
                                     .ToList();
-
             enumList.ForEach(instance => dbSet.AddOrUpdate(instance));
         }
     }

@@ -45,6 +45,7 @@ namespace EntityFramework.LookupTables
 
         public static IEnumerable<Type> GetLookupTableTypes()
         {
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             var assemblies = AssemblyHeplers.GetCurrentAssemblies();
             var desTypes = new List<Type>();
             foreach (var assembly in assemblies)

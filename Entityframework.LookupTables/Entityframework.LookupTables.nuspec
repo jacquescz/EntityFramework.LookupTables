@@ -10,6 +10,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Adds enums support to Entityframewok.</description>
     <copyright>Copyright 2016</copyright>
-    <tags>entityframewok enums lookuptable</tags>
+    <tags>entityframework enums lookuptable</tags>
   </metadata>
 </package>

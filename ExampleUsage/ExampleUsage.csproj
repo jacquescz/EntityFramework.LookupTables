@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA3BC01B-5C33-4B55-B2DA-467A5E20DBAC}</ProjectGuid>
+    <ProjectGuid>{38F5A132-D861-4A3B-830B-481D7464F9EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entityframework.LookupTables</RootNamespace>
-    <AssemblyName>Entityframework.LookupTables</AssemblyName>
+    <RootNamespace>ExampleUsage</RootNamespace>
+    <AssemblyName>ExampleUsage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,18 +49,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conventions.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="Helpers.cs" />
-    <Compile Include="IIdentity.cs" />
-    <Compile Include="ILookupTable.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="LookupTables\TestEnum.cs" />
+    <Compile Include="Mappings\PersonMap.cs" />
+    <Compile Include="Migrations\201610111546387_Init.cs" />
+    <Compile Include="Migrations\201610111546387_Init.Designer.cs">
+      <DependentUpon>201610111546387_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111548343_AddPerson.cs" />
+    <Compile Include="Migrations\201610111548343_AddPerson.Designer.cs">
+      <DependentUpon>201610111548343_AddPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Entityframework.LookupTables.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <ProjectReference Include="..\Entityframework.LookupTables\Entityframework.LookupTables.csproj">
+      <Project>{BA3BC01B-5C33-4B55-B2DA-467A5E20DBAC}</Project>
+      <Name>Entityframework.LookupTables</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610111546387_Init.resx">
+      <DependentUpon>201610111546387_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111548343_AddPerson.resx">
+      <DependentUpon>201610111548343_AddPerson.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
