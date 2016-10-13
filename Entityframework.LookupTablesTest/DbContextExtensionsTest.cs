@@ -74,13 +74,16 @@ namespace Entityframework.LookupTablesTest
         {
             //arrange
             var context = new MyContext();
-            var set = context.Set<Test>();
+            var persons = context.Set<Person>();
+            context.DeleteRangeIgnorePrimaryKey<Person, Test, TestEnum>(persons);
+            var test = context.Set<Test>();
             context.SeedEnumValues<Test, TestEnum>();
             //act
-            context.DeleteIgnorePrimaryKey(set.FirstOrDefault());
-            var result = set.ToList();
+            context.DeleteIgnorePrimaryKey(test.FirstOrDefault());
+            var result = test.ToList();
             //assert
             Assert.True(result.Count() == 1);
+            context.SeedEnumValues<Test, TestEnum>();
         }
     }
 }

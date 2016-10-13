@@ -74,11 +74,22 @@ namespace EntityFramework.LookupTables
             }
         }
 
-        internal static void DeleteIgnorePrimaryKey<TEntity>(this DbContext context, TEntity entity) where TEntity : class
+        internal static void DeleteIgnorePrimaryKey<TEntity>(this DbContext context, TEntity entity, bool autoSave = true) where TEntity : class
         {
             var objectContext = ((IObjectContextAdapter)context).ObjectContext;
             objectContext.DeleteObject(entity);
-            objectContext.SaveChanges();
+            if (autoSave) objectContext.SaveChanges();
+        }
+
+        internal static void DeleteRangeIgnorePrimaryKey<TEntity, TEnumEntity, TEnum>(this DbContext context, DbSet<TEntity> entities) where TEntity : class
+        {
+            var enumType = typeof(TEnum).GetAssemblyEnumsFor();
+            foreach (var entity in entities)
+            {
+                context.DeleteIgnorePrimaryKey(entity, false);
+            }
+            context.SaveChanges();
+            context.SeedEnumValues(typeof(TEnumEntity), enumType);
         }
     }
 

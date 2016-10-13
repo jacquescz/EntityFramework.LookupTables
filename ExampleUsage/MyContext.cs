@@ -8,15 +8,15 @@ namespace ExampleUsage
     {
         public MyContext() : base("test")
         {
-            Database.SetInitializer<MyContext>(new DropCreateDatabaseAlways<MyContext>());
+            Database.SetInitializer<MyContext>(new DatabaseInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Add conventions.
+            ////Add conventions.
             modelBuilder.Conventions.Add<LookupTableConvention>();
-            //Registers to the modelBuilder all entities that inherits from EntityTypeConfiguration<>
-            //this in not mandatory for the lookuptables to work.
+            ////Registers to the modelBuilder all entities that inherits from EntityTypeConfiguration<>
+            ////this in not mandatory for the lookuptables to work.
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(GetType()));
             base.OnModelCreating(modelBuilder);
         }

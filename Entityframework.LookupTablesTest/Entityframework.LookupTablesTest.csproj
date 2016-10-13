@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="DbContextExtensionsTest.cs" />
     <Compile Include="DbSetExtensionsTest.cs" />
+    <Compile Include="PersonTest.cs" />
     <Compile Include="TypeExtensionsTest.cs" />
     <Compile Include="TypeHelpersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,5 @@
 namespace ExampleUsage.Migrations
 {
-    using EntityFramework.LookupTables;
     using System.Data.Entity.Migrations;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ExampleUsage.MyContext>
@@ -24,7 +23,8 @@ namespace ExampleUsage.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.SeedAllEnumValues();
+
+            base.Seed(context);
         }
     }
 }

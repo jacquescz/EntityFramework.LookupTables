@@ -50,17 +50,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conventions.cs" />
+    <Compile Include="CreateDatabaseIfNotExists.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IIdentity.cs" />
     <Compile Include="ILookupTable.cs" />
+    <Compile Include="DropCreateDatabaseAlways.cs" />
+    <Compile Include="LookupTablesInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Entityframework.LookupTables.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="package.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gruntfile.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="nuget\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
