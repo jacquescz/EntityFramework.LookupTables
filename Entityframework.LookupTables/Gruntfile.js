@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            nupkg: ["nuget/*.nupkg"]
+            nupkg: [".nupkg/*.nupkg"]
         },
     });
 
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                 "pack",
                 csproj[0],
                 "-OutputDirectory",
-                "nuget",
+                ".nupkg",
             ]
         }, function (error, result) {
             if (error) {
@@ -34,13 +34,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('nugetpush', 'Publish a nuget package', function () {
         var done = this.async();
-        var nupkg = grunt.file.expand({ filter: "isFile", cwd: "nuget" }, ["*.nupkg"]);
+        var nupkg = grunt.file.expand({ filter: "isFile", cwd: ".nupkg" }, ["*.nupkg"]);
 
         grunt.util.spawn({
             cmd: "nuget.exe",
             args: [
                 "push",
-                "nuget/" + nupkg[0],
+                ".nupkg/" + nupkg[0],
                 process.env.NUGETKEY,
                 "-Source",
                 "https://www.nuget.org/api/v2/package",

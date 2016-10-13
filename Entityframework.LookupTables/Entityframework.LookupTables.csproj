@@ -52,6 +52,7 @@
     <Compile Include="Conventions.cs" />
     <Compile Include="CreateDatabaseIfNotExists.cs" />
     <Compile Include="Extensions.cs" />
+    <None Include="Gruntfile.js" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IIdentity.cs" />
     <Compile Include="ILookupTable.cs" />
@@ -64,10 +65,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Gruntfile.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="nuget\" />
+    <Folder Include=".nupkg\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
