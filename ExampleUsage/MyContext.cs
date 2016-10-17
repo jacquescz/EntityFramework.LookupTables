@@ -8,7 +8,12 @@ namespace ExampleUsage
     {
         public MyContext() : base("test")
         {
-            Database.SetInitializer<MyContext>(new DatabaseInitializer());
+            Database.Initialize(true);
+        }
+
+        static MyContext()
+        {
+            Database.SetInitializer(new DatabaseInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
