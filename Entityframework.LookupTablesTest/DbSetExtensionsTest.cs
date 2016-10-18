@@ -5,7 +5,7 @@ using ExampleUsage.Models;
 using System.Linq;
 using Xunit;
 
-namespace Entityframework.LookupTablesTest
+namespace EntityFramework.LookupTablesTest
 {
     public class DbSetExtensionsTest
     {

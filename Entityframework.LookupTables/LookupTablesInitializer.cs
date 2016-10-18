@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace Entityframework.LookupTables
+namespace EntityFramework.LookupTables
 {
     public class LookupTablesInitializer<TDbContext> : CreateDatabaseIfNotExists<TDbContext>
         where TDbContext : DbContext

@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Diagnostics.Contracts;
 
-namespace Entityframework.LookupTables
+namespace EntityFramework.LookupTables
 {
     public class CreateDatabaseIfNotExists<TDbContext> : IDatabaseInitializer<TDbContext>
         where TDbContext : DbContext

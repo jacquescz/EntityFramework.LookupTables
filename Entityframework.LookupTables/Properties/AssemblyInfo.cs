@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Entityframework.LookupTables")]
+[assembly: AssemblyTitle("EntityFramework.LookupTables")]
 [assembly: AssemblyDescription("Adds enums support to Entityframewok.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

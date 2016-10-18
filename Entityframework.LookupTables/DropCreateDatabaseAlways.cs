@@ -2,12 +2,12 @@
 using System.Data.Entity;
 using System.Diagnostics.Contracts;
 
-namespace Entityframework.LookupTables
+namespace EntityFramework.LookupTables
 {
     public class DropCreateDatabaseAlways<TDbContext> : IDatabaseInitializer<TDbContext>
         where TDbContext : DbContext
     {
-        public void InitializeDatabase(TDbContext context)
+        void IDatabaseInitializer<TDbContext>.InitializeDatabase(TDbContext context)
         {
             Contract.Requires(context != null, nameof(context));
 
@@ -16,10 +16,9 @@ namespace Entityframework.LookupTables
             if (!context.Database.Exists())
             {
                 context.Database.Create();
+                context.SeedAllEnumValues();
+                Seed(context);
             }
-
-            context.SeedAllEnumValues();
-            Seed(context);
         }
 
         protected virtual void Seed(TDbContext context)

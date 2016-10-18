@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entityframework.LookupTables", "Entityframework.LookupTables\Entityframework.LookupTables.csproj", "{BA3BC01B-5C33-4B55-B2DA-467A5E20DBAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.LookupTables", "Entityframework.LookupTables\EntityFramework.LookupTables.csproj", "{BA3BC01B-5C33-4B55-B2DA-467A5E20DBAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entityframework.LookupTablesTest", "Entityframework.LookupTablesTest\Entityframework.LookupTablesTest.csproj", "{80176808-1611-4E51-8C1A-5073DF23AA6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.LookupTablesTest", "Entityframework.LookupTablesTest\EntityFramework.LookupTablesTest.csproj", "{80176808-1611-4E51-8C1A-5073DF23AA6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleUsage", "ExampleUsage\ExampleUsage.csproj", "{38F5A132-D861-4A3B-830B-481D7464F9EB}"
 EndProject

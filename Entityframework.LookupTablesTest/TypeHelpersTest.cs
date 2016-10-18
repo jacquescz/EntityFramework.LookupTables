@@ -2,7 +2,7 @@
 using ExampleUsage.Models;
 using Xunit;
 
-namespace Entityframework.LookupTablesTest
+namespace EntityFramework.LookupTablesTest
 {
     public class TypeHelpersTest
     {

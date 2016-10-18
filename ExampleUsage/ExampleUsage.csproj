@@ -69,12 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entityframework.LookupTables\Entityframework.LookupTables.csproj">
-      <Project>{BA3BC01B-5C33-4B55-B2DA-467A5E20DBAC}</Project>
-      <Name>Entityframework.LookupTables</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -85,6 +79,12 @@
     <EmbeddedResource Include="Migrations\201610111548343_AddPerson.resx">
       <DependentUpon>201610111548343_AddPerson.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entityframework.LookupTables\EntityFramework.LookupTables.csproj">
+      <Project>{ba3bc01b-5c33-4b55-b2da-467a5e20dbac}</Project>
+      <Name>EntityFramework.LookupTables</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -84,9 +84,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entityframework.LookupTables\Entityframework.LookupTables.csproj">
+    <ProjectReference Include="..\Entityframework.LookupTables\EntityFramework.LookupTables.csproj">
       <Project>{ba3bc01b-5c33-4b55-b2da-467a5e20dbac}</Project>
-      <Name>Entityframework.LookupTables</Name>
+      <Name>EntityFramework.LookupTables</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExampleUsage\ExampleUsage.csproj">
       <Project>{38F5A132-D861-4A3B-830B-481D7464F9EB}</Project>

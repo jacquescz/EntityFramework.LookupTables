@@ -8,7 +8,6 @@ namespace ExampleUsage
     {
         public MyContext() : base("test")
         {
-            Database.Initialize(true);
         }
 
         static MyContext()
@@ -22,7 +21,8 @@ namespace ExampleUsage
             modelBuilder.Conventions.Add<LookupTableConvention>();
             ////Registers to the modelBuilder all entities that inherits from EntityTypeConfiguration<>
             ////this in not mandatory for the lookuptables to work.
-            modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(GetType()));
+            var assambly = Assembly.GetAssembly(GetType());
+            modelBuilder.Configurations.AddFromAssembly(assambly);
             base.OnModelCreating(modelBuilder);
         }
     }
