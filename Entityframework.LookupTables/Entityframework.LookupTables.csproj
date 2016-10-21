@@ -52,7 +52,6 @@
     <Compile Include="Conventions.cs" />
     <Compile Include="CreateDatabaseIfNotExists.cs" />
     <Compile Include="Extensions.cs" />
-    <None Include="Gruntfile.js" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IIdentity.cs" />
     <Compile Include="ILookupTable.cs" />
@@ -60,9 +59,6 @@
     <Compile Include="LookupTablesInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".nupkg\" />
